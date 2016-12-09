@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<div class="panel panel-default" ng-repeat="tl in TagList">
+    <div class="panel-heading">
+        {{ tl.name }}
+        <div class="btn-group pull-right">
+            <a class="btn  dropdown-toggle " data-toggle="dropdown">
+                <span class="glyphicon glyphicon-align-justify panel-info"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#/questionTag" ng-click="questionTagDelete(tl.name)">删除</a></li>
+                <li><a href="#/questionTag" ng-click="questionTagEdit(tl.name)">编辑</a></li>
+                <li><a href="#/questionTag" ng-click="questionTagFind(tl.name)">查看题目</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel-body">
+       <span>共{{ tl.options.length }}道题</span>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+<a href="#/questionList" class="btn btn-info">题目列表({{questionLength}})</a>
+<a href="#/questionTag" class="btn btn-success">题目标签({{ Tags }})</a>
+<button class="btn btn-info" ng-click="open()">添加题目</button>
+<a href="#/" class="btn btn-success">导入题目</a>
+<br><br>
+<span>共 {{questionLength}} 道题目</span>
+<br>
+<nav class="navbar navbar-default" role="navigation">
+    <span class="navbar-brand" style="font-size: 15px;">题型：</span>
+    <div class="collapse navbar-collapse">
+        <button type="button" class="btn btn-default navbar-btn" ng-click="findOneByType(item)" style="margin-left:4px;" ng-repeat="item in items" ng-class="{'btnClass':(islActive.id == item.id)}">{{item.name}}</button>
+    </div>
+    <span class="navbar-brand" style="font-size: 15px;">标签：</span>
+    <div class="collapse navbar-collapse" >
+        <button type="button" class="btn btn-default navbar-btn" ng-click="findOneByTag(qt)" style="margin-left:4px;" ng-repeat="qt in questionTags" ng-class="{'btnClass':(isTypeActive == qt)}">{{ qt }}</button>
+    </div>
+</nav>
+<ul class="list-group" ng-repeat="question in questions">
+    <li class="list-group-item" ng-if="question.type == 1">
+        <h4 class="list-group-item-heading">【{{ question.type | typeStr }}】{{question.content}}&nbsp;({{question.answer | optionStr}})</h4>
+        <p class="list-group-item-text" ng-repeat="option in question.options">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$index | optionStr}}.{{option.name}}
+        </p>
+        <p>标签：{{ question.tag }}</p>
+        <a href="#/editQuestion/{{ question._id }}/{{question.type}}" type="button" class="btn btn-warning">编辑</a>
+        <button type="button" class="btn btn-danger" ng-click="deleteQuestion(question);">删除</button>
+    </li>
+    <li class="list-group-item" ng-if="question.type == 2">
+        <h4 class="list-group-item-heading">【{{ question.type | typeStr }}】{{question.content}}&nbsp;({{question.options | selectedStr}})</h4>
+        <p class="list-group-item-text" ng-repeat="option in question.options">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$index | optionStr}}.{{option.name}}
+        </p>
+        <p>标签：{{ question.tag }}</p>
+        <a href="#/editQuestion/{{ question._id }}/{{question.type}}" type="button" class="btn btn-warning">编辑</a>
+        <button type="button" class="btn btn-danger" ng-click="deleteQuestion(question);">删除</button>
+    </li>
+    <li class="list-group-item" ng-if="question.type == 3">
+        <h4 class="list-group-item-heading">【{{ question.type | typeStr }}】{{question.content}} &nbsp;({{question.answer == 0? "√":"×"}})</h4>
+        <p>标签：{{ question.tag }}</p>
+        <a href="#/editQuestion/{{ question._id }}/{{question.type}}" type="button" class="btn btn-warning">编辑</a>
+        <button type="button" class="btn btn-danger" ng-click="deleteQuestion(question);">删除</button>
+    </li>
+</ul>
+
+
+

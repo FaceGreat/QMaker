@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<div class="form-group col-md-6">
+    <h4>题目设置</h4>
+    <label class="control-label" style="font-size: 15px;">填空题题干：
+        <button class="btn btn-success mt12" ng-click="addBlock();">添加一个空白区</button>
+    </label>
+    <textarea rows="2" name="wysiwyg" class="form-control wysiwyg pack" placeholder="输入填空题的题目..." ng-model="formData.content">
+
+    </textarea>
+    <br>
+</div>
+<div class="form-group col-md-1"></div>
+<div class="form-group col-md-5">
+    <h4>题目预览</h4>
+    <label class="control-label" style="font-size: 15px;">填空题题干：</label>
+    <div class="form-control-static">{{formData.content}}</div>
+    <div class="form-group">
+        <button class="btn btn-success mt12" ng-click="saveQuestion()">保存</button>
+        <a href="#/questionList" class="btn btn-info mt12">返回题目列表</a>
+    </div>
+</div>

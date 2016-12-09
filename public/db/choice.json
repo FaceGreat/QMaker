@@ -1,0 +1,3 @@
+{"_id":{"$oid":"57c82cea0402dc32fc7710bf"},"type":"1","answer":1,"options":[{"name":"答案A"},{"name":"答案B"},{"name":"答案C"},{"name":"答案D"}],"name":"","tag":"java","content":"测试单选题"}
+{"_id":{"$oid":"57c82d200402dc32fc7710c0"},"type":"2","options":[{"name":"多选答案A","selected":true},{"name":"多选答案B","selected":true},{"name":"多选答案C","selected":true},{"name":"多选答案D","selected":true},{"name":"多选答案E"}],"name":"","tag":"node","content":"测试多选题"}
+{"_id":{"$oid":"57c82d3c0402dc32fc7710c1"},"type":"3","options":[{"name":"说法正确"},{"name":"说法错误"}],"name":"","tag":"angular","answer":0,"content":"测试判断"}

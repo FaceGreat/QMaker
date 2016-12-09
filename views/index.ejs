@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="QMaker">
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script type="text/javascript" src="/javascripts/other/jquery-1.9.1.min.js"></script>
+    <link rel='stylesheet' href="/javascripts/other/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/javascripts/other/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/other/angular.min.js"></script>
+    <script type="text/javascript" src="/javascripts/other/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/other/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="/javascripts/other/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="/javascripts/other/angular-resource.js"></script>
+    <!--
+    <script type="text/javascript" src="/javascripts/other/bootstrap/js/bootstrap-wysihtml5.min.js"></script>
+    <script type="text/javascript" src="/javascripts/other/bootstrap/js/wysihtml5.min.js"></script>
+    <link rel="stylesheet" href="/javascripts/other/bootstrap/css/bootstrap-wysihtml5.css"/>-->
+    <!-- 用于填写字体的兼容 -->
+    <system.webServer>
+        <staticContent>
+            <remove fileExtension=".woff"/>
+            <mimeMap fileExtension=".woff" mimeType="application/font-woff" />
+            <remove fileExtension=".woff2"/>
+            <mimeMap fileExtension=".woff2" mimeType="application/font-woff" />
+        </staticContent>
+    </system.webServer>
+    <script type="text/javascript" src="/QMaker/qmaker.js"></script>
+    <script type="text/javascript" src="/QMaker/QMakerInit.js"></script>
+    <style>
+        .btnClass{
+            background-color: #5bc0de;
+            color: #fff;
+            border-color: #46b8da
+        }
+    </style>
+</head>
+<body ng-controller = "QMakerCtrl">
+	<div class="navbar navbar-default">
+        <div class="navbar-header">
+            <a href="#/" class="navbar-brand">Question Maker</a>
+        </div>
+    </div>
+	<div class="maincontent container-fluid" ui-view>
+		
+    </div>
+</body>
+</html>

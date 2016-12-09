@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h4 class="modal-title">选择添加题目类型</h4>
+</div>
+<div class="modal-body">
+    <button id="{{ item.id }}" ng-if="item.id != 0" style="margin-left:4px;"  ng-repeat="item in items" class="btn btn-default" ng-click="addQuestion(item.id)">{{ item.name }}</button>
+    <br><br>
+    <br><br>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">取消</button>
+</div>
